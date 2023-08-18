@@ -1,25 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Password Page</title>
-    <script>
-        function checkPassword() {
-            var enteredPassword = document.getElementById("password").value;
-            var correctPassword = "23772"; // Replace this with the actual correct password
-
-            if (enteredPassword === correctPassword) {
-                window.location.href = "https://www.google.com"; // Replace this with the desired redirect URL
-            } else {
-                document.getElementById("message").innerHTML = "You have entered the wrong password.";
-            }
-        }
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles1.css">
+<title>Your Website</title>
 </head>
 <body>
-    <h1>Welcome to the Password Page</h1>
-    <p>Please enter the password to proceed:</p>
-    <input type="password" id="password">
-    <button onclick="checkPassword()">Submit</button>
-    <p id="message"></p>
+<div class="image-container">
+  <img src="images/timer.png" alt="Background Image" class="background-image">
+  <div class="text-overlay">
+    <h1>Welcome to Your Website</h1>
+    <p>Your tagline or brief description goes here.</p>
+    <a href="#" class="cta-button">Explore</a>
+  </div>
+</div>
 </body>
 </html>
