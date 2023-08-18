@@ -23,6 +23,54 @@
        text-align: center;
         
     }
+
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+  }
+  .testimonials {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  .testimonial {
+    display: none;
+    text-align: center;
+  }
+  .testimonial img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+  .testimonial p {
+    font-style: italic;
+    color: #555;
+  }
+  .testimonial.active {
+    display: block;
+  }
+  .dots {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #bbb;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  .dot.active {
+    background-color: #333;
+  }
   </style>
 </head>
 
@@ -102,10 +150,13 @@
                 </button>
                 <h3>You will get the password on your telegram id after your Verification</h3>
               </div>
-              <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                <p >Please enter the correct password to Enter in Room:</p>
+              <p >Please enter the correct password to Enter in Room:</p>
+              <div class="d-grid gap-2 d-sm-flex ">
+                <div>
+
+                </div>
                 <br>
-                <input type="password" id="password">
+                <input type="password" id="password" style="height: 40px;">
                 <br>
                 <br>
                 
@@ -114,7 +165,7 @@
                     
                 </button> -->
                 <br>
-                <div style="margin-top: 7%; ">
+                <div>
                   <button onclick="checkPassword()" >Submit</button>
 
                 </div>
@@ -174,6 +225,33 @@
             <br>
             <p><a class="btn btn-secondary" href="#">Moderator-3</a></p>
           </div><!-- /.col-lg-4 -->
+        </div>
+      </section>
+      <section>
+        
+        <h3 style="text-align: center;">Our Testimonials</h3>
+
+        <div class="testimonials">
+          <div class="testimonial active">
+            <img src="images/alisha.jpg" alt="Client 1">
+            <h6>Alisha</h6>
+            <p>"It has definitely helped me a lot to stay focussed during my JEE preparation, at home. It gives great study environment, and the more I saw others declaring their tasks and completing them within time, more I got inspired to complete my targets"</p>
+          </div>
+          <div class="testimonial">
+            <img src="images/ayush.jpg" alt="Client 2">
+            <h6>Ayush</h6>
+            <p>"It increased my Productivity "</p>
+          </div>
+          <div class="testimonial">
+            <img src="images/kavya.jpg" alt="Client 3">
+            <h6>Madam President</h6>
+            <p>"It feels amazing yaar. SG ends and resurrects as SM (SG 2.0)❤️.."</p>
+          </div>
+          <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
         </div>
       </section>
       <section style="margin: 100px 20px 100px 20px; border: 2px solid black; padding: 40px; border-radius: 10px;" s>
@@ -267,6 +345,36 @@
               document.getElementById("message").innerHTML = "You have entered the wrong password.";
           }
       }
+
+      const testimonials = document.querySelectorAll('.testimonial');
+  const dots = document.querySelectorAll('.dot');
+
+  let activeIndex = 0;
+
+  function showTestimonial(index) {
+    testimonials.forEach((testimonial, i) => {
+      if (i === index) {
+        testimonial.classList.add('active');
+      } else {
+        testimonial.classList.remove('active');
+      }
+    });
+
+    dots.forEach((dot, i) => {
+      if (i === index) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+  }
+
+  function nextTestimonial() {
+    activeIndex = (activeIndex + 1) % testimonials.length;
+    showTestimonial(activeIndex);
+  }
+
+  setInterval(nextTestimonial, 3000); // Change testimonial every 5 seconds
   </script>
 </body>
 
