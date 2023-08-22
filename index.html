@@ -194,6 +194,10 @@
                     https://meet.jit.si/moderated/dca4961a25f3d2dcbc776469bba471c5e0adbdd6979e929f50e7ce216e422a99
 " style="text-decoration: none; color: black; font-weight: 800; ">SB-Room 2</a>
                 </button>
+                <button type="button" id="moderators" class="btn btn-outline-success btn-lg px-4" style="border: 2px solid black;">
+                  <b style="color: black;">Only For Moderators</b>
+                </button>
+                <div class="mode"></div>
               </div>
             </div>
           </div>
@@ -249,7 +253,7 @@
           <div class="testimonial">
             <img src="images/kavya.jpg" alt="Client 3">
             <h6 style="color: wheat;" >Madam President</h6>
-            <p  style="color: wheat;" >"It feels amazing yaar. SG ends and resurrects as SM (SG 2.0)❤️.."</p>
+            <p  style="color: wheat;" >"SM helped me find study mates .Best part is aspirant are online round the clock and you know that they are all studying . It helps assess gap and improve❤️.."</p>
           </div>
           <div class="dots">
             <span class="dot active"></span>
@@ -400,6 +404,31 @@
   }
 
   setInterval(nextTestimonial, 3000); // Change testimonial every 5 seconds
+
+  //moderators
+  var mode=  document.querySelector(".mode")
+  var moderators = document.getElementById("moderators");
+  moderators.addEventListener("click",() => {
+    var input = document.createElement("input");
+    var submit = document.createElement("button")
+    submit.className ="modsubmit"
+    submit.innerText = "Submit"
+   
+    mode.appendChild(input)
+    mode.appendChild(submit)
+submit.addEventListener("click", ()=>{
+
+
+  var inputvalue = input.value;
+  var realpass = "232477"
+  if (inputvalue == realpass){
+            window.location.href = "https://moderated.jitsi.net/eaee9d7401774ad2b0d2ce17f784cb5dbb156a4422f24e9882df33370ea0ce91"
+          }else{
+    document.getElementById("mode").innerHTML = "You have entered the wrong password.";
+  }
+  
+})
+})
   </script>
 </body>
 
